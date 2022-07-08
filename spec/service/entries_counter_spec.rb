@@ -1,5 +1,5 @@
-require '../../lib/service/entries_counter'
-require '../../lib/service/sorter'
+require 'service/entries_counter'
+require 'service/sorter'
 
 RSpec.describe Service::EntriesCounter do
   let(:sorted_logs) do
@@ -24,7 +24,7 @@ RSpec.describe Service::EntriesCounter do
     instance_double(Service::Sorter, sort_by_entries: sorted_logs, sort_by_unique_entries: sorted_unique_logs)
   end
   let(:counter) { described_class.new(sorter: sorter) }
-  let(:sample_file) { File.open('../support/test_file.log') }
+  let(:sample_file) { File.open('spec/support/test_file.log') }
 
   describe '#count' do
     it 'returns ordered number of entries per route' do

@@ -1,4 +1,4 @@
-require '../../lib/service/file_loader'
+require 'service/file_loader'
 require 'tempfile'
 
 RSpec.describe Service::FileLoader do

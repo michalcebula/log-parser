@@ -1,11 +1,11 @@
-require '../parser'
-require '../lib/service/entries_counter'
-require '../lib/service/file_loader'
-require '../lib/service/sorter'
+require 'parser'
+require 'service/entries_counter'
+require 'service/file_loader'
+require 'service/sorter'
 
-RSpec.describe Parser do
+describe Parser do
   let(:file_loader) { instance_double(Service::FileLoader, load_by_name: test_file) }
-  let(:test_file) { File.open('./support/test_file.log') }
+  let(:test_file) { File.open('spec/support/test_file.log') }
   let(:counted_logs) { [{ '/first' => 3 }, { '/second' => 2 }, { '/third' => 1 }] }
   let(:counted_unique_logs) { [{ '/first' => 2 }, { '/second' => 1 }, { '/third' => 1 }] }
 

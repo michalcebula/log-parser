@@ -1,8 +1,8 @@
-require '../../lib/service/sorter'
+require 'service/sorter'
 
 RSpec.describe Service::Sorter do
   let(:sorter) { described_class.new }
-  let(:sample_file) { File.open('../support/test_file.log') }
+  let(:sample_file) { File.open('spec/support/test_file.log') }
   let(:sorted_logs) do
     [
       { route: '/first', address: '111.111.111.111' },
